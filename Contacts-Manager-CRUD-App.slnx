@@ -1,0 +1,17 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/src/">
+    <Project Path="ContactsManager.Core/ContactsManager.Core.csproj" />
+    <Project Path="ContactsManager.Infrastructure/ContactsManager.Infrastructure.csproj" />
+    <Project Path="ContactsManager.Web/ContactsManager.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="ContactsManager.ControllerTests/ContactsManager.ControllerTests.csproj" Id="6c5f74cb-b585-4ebb-b084-52d20881d72c" />
+    <Project Path="ContactsManager.IntegrationTests/ContactsManager.IntegrationTests.csproj" Id="a84404b4-59f8-476a-9d30-123c1f4c4650" />
+    <Project Path="ContactsManager.ServiceTests/ContactsManager.ServiceTests.csproj" Id="8f2c7a47-ee19-457a-b92b-1ce10ca1c1fc" />
+  </Folder>
+</Solution>
