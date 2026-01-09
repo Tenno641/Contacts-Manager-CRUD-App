@@ -1,0 +1,21 @@
+@if (ViewBag.CurrentSortBy == ViewBag.ColumnName && ViewBag.CurrentSortOrder == SortOrderOptions.Ascending)
+{
+    <th>
+        <a asp-action="Index" asp-controller="Home" asp-route-searchby="@ViewBag.CurrentSearchBy" asp-route-searchString="@ViewBag.CurrentSearchString" asp-route-sortby="@ViewBag.ColumnName" asp-route-sortOrder="@SortOrderOptions.Descending.ToString()">@ViewBag.DisplayName</a>
+        <i class="fa-solid fa-arrow-up"></i>
+    </th>
+}
+else if (ViewBag.CurrentSortBy == ViewBag.ColumnName && ViewBag.CurrentSortOrder == SortOrderOptions.Descending)
+{
+    <th>
+        <a asp-action="Index" asp-controller="Home" asp-route-searchby="@ViewBag.CurrentSearchBy" asp-route-searchString="@ViewBag.CurrentSearchString" asp-route-sortBy="@ViewBag.ColumnName" asp-route-sortOrder="@SortOrderOptions.Ascending.ToString()">@ViewBag.DisplayName</a>
+        <i class="fa-solid fa-arrow-down"></i>
+    </th>
+}
+else
+{
+    <th>
+        <a asp-action="Index" asp-controller="Home" asp-route-searchby="@ViewBag.CurrentSearchBy" asp-route-searchString="@ViewBag.CurrentSearchString" asp-route-sortBy="@ViewBag.ColumnName" asp-route-sortOrder="@SortOrderOptions.Ascending.ToString()">@ViewBag.DisplayName</a>
+        <i class="fa-solid fa-arrow-up"></i>
+    </th>
+}

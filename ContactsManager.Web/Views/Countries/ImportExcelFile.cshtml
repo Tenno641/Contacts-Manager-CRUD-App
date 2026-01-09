@@ -1,0 +1,16 @@
+﻿<h1>Upload Countries</h1>
+<form asp-action="ImportExcelFile" asp-controller="Countries" method="post" enctype="multipart/form-data">
+    <div class="box flex">
+        <div class="w-25">
+            <label class="w-25" for="ExcelFile">Excel File</label>
+        </div>
+        <div class="flex-1">
+            <input type="file" for="ExcelFile" name="file" class="flex-1 form-input" />
+        </div>
+        <div class="w-25">
+            <button class="button button-green-back w-25" type="submit">Upload</button>
+        </div>
+    </div>
+</form>
+<h3 class="text-red">@ViewBag.ErrorMessage</h3>
+<h3 class="text-green">@ViewBag.Message</h3>

@@ -1,0 +1,116 @@
+@model IEnumerable<PersonResponse>
+@{
+    ViewBag.pageTitle = "Home";
+}
+
+<form asp-controller="Home" asp-action="Index" method="get">
+    <div class="flex">
+        <div class="flex-1">
+            <div class="text-grey">
+                <span>Contacts</span>
+                <i class="fa-solid fa-caret-right"></i>
+                <span class="text-grey">Persons</span>
+            </div>
+        </div>
+
+        <div class="flex-1 text-right">
+            <a asp-controller="Home" asp-action="CreatePerson" class="button-link button-blue-back">Create Person</a>
+
+            <a asp-controller="Home" asp-action="PersonsPdf" class="button-link button-blue-back ml">Download as PDF</a>
+
+            <a asp-controller="Home" asp-action="PersonsCsv" class="button-link button-blue-back ml">Download as CSV</a>
+
+            <a asp-controller="Home" asp-action="PersonsExcel" class="button-link button-blue-back ml">Download as Excel</a>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <div class="flex">
+            <div class="flex-1">
+                <h1>Persons</h1>
+            </div>
+            <div class="flex-3 text-right">
+                <label>Search by:</label>
+
+                <select class="search-dropdown" name="searchBy" style="width: 200px">
+                    @foreach (var field in ViewBag.SearchOptions)
+                    {
+                        if (field.Key == ViewBag.CurrentSearchBy)
+                        {
+                            <option value="@field.Key" selected="selected">@field.Value</option>
+                        }
+                        else
+                        {
+                            <option value="@field.Key">@field.Value</option>
+                        }
+
+                    }
+                    @* Eg: searchBy=PersonName&searchString=abc *@
+                </select>
+
+                <input type="search" id="Search" class="search-text" placeholder="Search" name="searchString" value="@ViewBag.CurrentSearchString" style="width:200px" />
+
+                <button class="search-button">Search</button>
+
+                <a asp-controller="Home" asp-action="Index" class="ml link-hover">Clear all</a>
+            </div>
+        </div>
+
+
+
+        <table class="table w-100 mt">
+            <thead>
+                <tr>
+                    @{
+                        await Html.RenderPartialAsync("_ColumnHeader", new ViewDataDictionary(ViewData) { { "ColumnName", "Name" }, { "DisplayName", "Person Name" } });
+                    }
+                    @{
+                        await Html.RenderPartialAsync("_ColumnHeader", new ViewDataDictionary(ViewData) { { "ColumnName", "Email" }, { "DisplayName", "Email" } });
+                    }
+                    @{
+                        await Html.RenderPartialAsync("_ColumnHeader", new ViewDataDictionary(ViewData) { { "ColumnName", "DateOfBirth" }, { "DisplayName", "Date Of Birth" } });
+                    }
+                    @{
+                        await Html.RenderPartialAsync("_ColumnHeader", new ViewDataDictionary(ViewData) { { "ColumnName", "Age" }, { "DisplayName", "Age" } });
+                    }
+                    @{
+                        await Html.RenderPartialAsync("_ColumnHeader", new ViewDataDictionary(ViewData) { { "ColumnName", "Gender" }, { "DisplayName", "Gender" } });
+                    }
+                    @{
+                        await Html.RenderPartialAsync("_ColumnHeader", new ViewDataDictionary(ViewData) { { "ColumnName", "Country" }, { "DisplayName", "Country" } });
+                    }
+                    @{
+                        await Html.RenderPartialAsync("_ColumnHeader", new ViewDataDictionary(ViewData) { { "ColumnName", "Address" }, { "DisplayName", "Address" } });
+                    }
+                    @{
+                        await Html.RenderPartialAsync("_ColumnHeader", new ViewDataDictionary(ViewData) { { "ColumnName", "ReceiveNewsLetters" }, { "DisplayName", "Receive News Letters" } });
+                    }
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (PersonResponse person in Model)
+                {
+                    <tr>
+                        <td>@person.Name</td>
+                        <td>@person.Email</td>
+                        <td>@person.DateOfBirth?.ToShortDateString()</td>
+                        <td>@person.Age</td>
+                        <td>@person.Gender</td>
+                        <td>@person.CountryName</td>
+                        <td>@person.Address</td>
+                        <td>@person.ReceiveNewsLetter</td>
+                        <td>
+                            <a asp-action="Update" asp-controller="Home" asp-route-id="@person.Id" class="button-link button-blue-back">Edit</a>
+                            <a asp-action="Delete" asp-controller="Home" asp-route-id="@person.Id" class="button-link button-blue-back">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+</form>

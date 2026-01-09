@@ -1,0 +1,202 @@
+[
+  {
+    "Id": "11111111-aaaa-4aaa-aaaa-111111111111",
+    "Name": "Ahmed Ali",
+    "Email": "ahmed.ali@example.com",
+    "DateOfBirth": "1990-01-01T00:00:00",
+    "Gender": "Male",
+    "CountryId": "a1e1f1d0-1111-4a2b-8888-123456789001",
+    "Address": "Cairo, Egypt",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111112-aaaa-4aaa-aaaa-111111111112",
+    "Name": "Sara Hassan",
+    "Email": "sara.hassan@example.com",
+    "DateOfBirth": "1985-03-15T00:00:00",
+    "Gender": "Female",
+    "CountryId": "b2e2f2d0-2222-4b3c-9999-123456789002",
+    "Address": "Berlin, Germany",
+    "ReceiveNewsLetter": false
+  },
+  {
+    "Id": "11111113-aaaa-4aaa-aaaa-111111111113",
+    "Name": "John Smith",
+    "Email": "john.smith@example.com",
+    "DateOfBirth": "1992-07-20T00:00:00",
+    "Gender": "Male",
+    "CountryId": "c3e3f3d0-3333-4c4d-aaaa-123456789003",
+    "Address": "Paris, France",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111114-aaaa-4aaa-aaaa-111111111114",
+    "Name": "Yuki Tanaka",
+    "Email": "yuki.tanaka@example.com",
+    "DateOfBirth": "1995-05-10T00:00:00",
+    "Gender": "Female",
+    "CountryId": "d4e4f4d0-4444-4d5e-bbbb-123456789004",
+    "Address": "Tokyo, Japan",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111115-aaaa-4aaa-aaaa-111111111115",
+    "Name": "Carlos Silva",
+    "Email": "carlos.silva@example.com",
+    "DateOfBirth": "1988-11-23T00:00:00",
+    "Gender": "Male",
+    "CountryId": "e5e5f5d0-5555-4e6f-cccc-123456789005",
+    "Address": "Rio de Janeiro, Brazil",
+    "ReceiveNewsLetter": false
+  },
+  {
+    "Id": "11111116-aaaa-4aaa-aaaa-111111111116",
+    "Name": "Laila Mohamed",
+    "Email": "laila.mohamed@example.com",
+    "DateOfBirth": "1993-02-28T00:00:00",
+    "Gender": "Female",
+    "CountryId": "a1e1f1d0-1111-4a2b-8888-123456789001",
+    "Address": "Alexandria, Egypt",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111117-aaaa-4aaa-aaaa-111111111117",
+    "Name": "Thomas MUller",
+    "Email": "thomas.muller@example.com",
+    "DateOfBirth": "1991-09-12T00:00:00",
+    "Gender": "Male",
+    "CountryId": "b2e2f2d0-2222-4b3c-9999-123456789002",
+    "Address": "Munich, Germany",
+    "ReceiveNewsLetter": false
+  },
+  {
+    "Id": "11111118-aaaa-4aaa-aaaa-111111111118",
+    "Name": "Marie Dubois",
+    "Email": "marie.dubois@example.com",
+    "DateOfBirth": "1990-12-05T00:00:00",
+    "Gender": "Female",
+    "CountryId": "c3e3f3d0-3333-4c4d-aaaa-123456789003",
+    "Address": "Lyon, France",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111119-aaaa-4aaa-aaaa-111111111119",
+    "Name": "Kenji Sato",
+    "Email": "kenji.sato@example.com",
+    "DateOfBirth": "1994-06-17T00:00:00",
+    "Gender": "Male",
+    "CountryId": "d4e4f4d0-4444-4d5e-bbbb-123456789004",
+    "Address": "Osaka, Japan",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111120-aaaa-4aaa-aaaa-111111111120",
+    "Name": "Ana Pereira",
+    "Email": "ana.pereira@example.com",
+    "DateOfBirth": "1989-08-30T00:00:00",
+    "Gender": "Female",
+    "CountryId": "e5e5f5d0-5555-4e6f-cccc-123456789005",
+    "Address": "SUo Paulo, Brazil",
+    "ReceiveNewsLetter": false
+  },
+  {
+    "Id": "11111121-aaaa-4aaa-aaaa-111111111121",
+    "Name": "Mohamed Hassan",
+    "Email": "mohamed.hassan@example.com",
+    "DateOfBirth": "1992-03-14T00:00:00",
+    "Gender": "Male",
+    "CountryId": "a1e1f1d0-1111-4a2b-8888-123456789001",
+    "Address": "Giza, Egypt",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111122-aaaa-4aaa-aaaa-111111111122",
+    "Name": "Julia Schmidt",
+    "Email": "julia.schmidt@example.com",
+    "DateOfBirth": "1987-07-19T00:00:00",
+    "Gender": "Female",
+    "CountryId": "b2e2f2d0-2222-4b3c-9999-123456789002",
+    "Address": "Hamburg, Germany",
+    "ReceiveNewsLetter": false
+  },
+  {
+    "Id": "11111123-aaaa-4aaa-aaaa-111111111123",
+    "Name": "Pierre Martin",
+    "Email": "pierre.martin@example.com",
+    "DateOfBirth": "1991-01-25T00:00:00",
+    "Gender": "Male",
+    "CountryId": "c3e3f3d0-3333-4c4d-aaaa-123456789003",
+    "Address": "Marseille, France",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111124-aaaa-4aaa-aaaa-111111111124",
+    "Name": "Hiroko Nakamura",
+    "Email": "hiroko.nakamura@example.com",
+    "DateOfBirth": "1993-10-08T00:00:00",
+    "Gender": "Female",
+    "CountryId": "d4e4f4d0-4444-4d5e-bbbb-123456789004",
+    "Address": "Kyoto, Japan",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111125-aaaa-4aaa-aaaa-111111111125",
+    "Name": "Felipe Costa",
+    "Email": "felipe.costa@example.com",
+    "DateOfBirth": "1990-04-11T00:00:00",
+    "Gender": "Male",
+    "CountryId": "e5e5f5d0-5555-4e6f-cccc-123456789005",
+    "Address": "BrasUlia, Brazil",
+    "ReceiveNewsLetter": false
+  },
+  {
+    "Id": "11111126-aaaa-4aaa-aaaa-111111111126",
+    "Name": "Nour Ahmed",
+    "Email": "nour.ahmed@example.com",
+    "DateOfBirth": "1995-12-02T00:00:00",
+    "Gender": "Female",
+    "CountryId": "a1e1f1d0-1111-4a2b-8888-123456789001",
+    "Address": "Aswan, Egypt",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111127-aaaa-4aaa-aaaa-111111111127",
+    "Name": "Markus Lehmann",
+    "Email": "markus.lehmann@example.com",
+    "DateOfBirth": "1988-09-29T00:00:00",
+    "Gender": "Male",
+    "CountryId": "b2e2f2d0-2222-4b3c-9999-123456789002",
+    "Address": "Frankfurt, Germany",
+    "ReceiveNewsLetter": false
+  },
+  {
+    "Id": "11111128-aaaa-4aaa-aaaa-111111111128",
+    "Name": "Claire Moreau",
+    "Email": "claire.moreau@example.com",
+    "DateOfBirth": "1992-05-06T00:00:00",
+    "Gender": "Female",
+    "CountryId": "c3e3f3d0-3333-4c4d-aaaa-123456789003",
+    "Address": "Nice, France",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111129-aaaa-4aaa-aaaa-111111111129",
+    "Name": "Takashi Yamamoto",
+    "Email": "takashi.yamamoto@example.com",
+    "DateOfBirth": "1994-08-21T00:00:00",
+    "Gender": "Male",
+    "CountryId": "d4e4f4d0-4444-4d5e-bbbb-123456789004",
+    "Address": "Hiroshima, Japan",
+    "ReceiveNewsLetter": true
+  },
+  {
+    "Id": "11111130-aaaa-4aaa-aaaa-111111111130",
+    "Name": "Juliana Lima",
+    "Email": "juliana.lima@example.com",
+    "DateOfBirth": "1989-03-17T00:00:00",
+    "Gender": "Female",
+    "CountryId": "e5e5f5d0-5555-4e6f-cccc-123456789005",
+    "Address": "Salvador, Brazil",
+    "ReceiveNewsLetter": false
+  }
+]
