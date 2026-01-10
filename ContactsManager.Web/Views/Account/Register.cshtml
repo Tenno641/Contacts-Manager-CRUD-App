@@ -1,0 +1,81 @@
+﻿@model Register
+@{
+    ViewBag.pageTitle = "Register";
+}
+
+<div class="text-gray">
+    <span>Contacts</span>
+    <i class="fa-solid fa-caret-right"></i>
+    <span>Register</span>
+</div>
+
+<div class="form-container">
+    <p>Already Registered?</p>
+    <a asp-action="SignIn" asp-controller="Account">Login</a>
+
+    <form asp-action="Register" asp-controller="Account" method="post">
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Name">Name</label>
+            </div>
+            <div class="flex-1">
+                <input class="form-input" asp-for="Name" />
+                <span class="text-red" asp-validation-for="Name"></span>
+            </div>
+        </div>
+
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Email"></label>
+            </div>
+            <div class="flex-1">
+                <input class="form-input" asp-for="Email" />
+                <span class="text-red" asp-validation-for="Email"></span>
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Phone"></label>
+            </div>
+            <div class="flex-1">
+                <input class="form-input" asp-for="Phone" />
+                <span class="text-red" asp-validation-for="Phone"></span>
+            </div>
+        </div>
+
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Password"></label>
+            </div>
+            <div class="flex-1">
+                <input class="form-input" asp-for="Password" />
+                <span class="text-red" asp-validation-for="Password"></span>
+            </div>
+        </div>
+
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="ConfirmPassword"></label>
+            </div>
+            <div class="flex-1">
+                <input class="form-input" asp-for="ConfirmPassword" />
+                <span class="text-red" asp-validation-for="ConfirmPassword"></span>
+            </div>
+        </div>
+
+        <div class="form-field flex">
+            <div class="w-25"></div>
+            <div class="flex-1">
+                <button class="button-green-back button" type="submit">Register</button>
+            </div>
+        </div>
+
+        <div class="text-red">
+            <div class="text-red" asp-validation-summary="All"></div>
+        </div>
+
+    </form>
+</div>
+@section Scripts {
+    <partial name="_ValidationScript" />
+}

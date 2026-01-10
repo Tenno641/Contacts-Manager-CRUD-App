@@ -1,12 +1,16 @@
-﻿using ContactsManager.Core.Domain.RepositoryContracts;
+﻿using ContactsManager.Core.Domain.IdentityEntities;
+using ContactsManager.Core.Domain.RepositoryContracts;
 using ContactsManager.Core.ServiceContracts.Countries;
 using ContactsManager.Core.ServiceContracts.Persons;
 using ContactsManager.Core.Services.Countries;
 using ContactsManager.Core.Services.Persons;
+using ContactsManager.Infrastructure;
+using ContactsManager.Infrastructure.Repositories;
 using ContactsManager.Web.Filters.ActionFilters;
-using Entities.DataAccess;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Repository;
 using Rotativaio.AspNetCore;
 
 namespace ContactsManager.Web.Startup;
@@ -35,6 +39,19 @@ public static class ServicesConfigurationExtensions
         {
             options.UseSqlServer(configuration.GetConnectionString("SqlServer"));
         });
+
+        services.AddAuthorization(options =>
+        {
+            options.FallbackPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+        });
+
+        services.AddIdentity<User, Role>()
+            .AddEntityFrameworkStores<PersonsDbContext>()
+            .AddUserStore<UserStore<User, Role, PersonsDbContext, Guid>>()
+            .AddRoleStore<RoleStore<Role, PersonsDbContext, Guid>>()
+            .AddDefaultTokenProviders();
+
+        services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/SignIn");
 
         services.AddHttpLogging(options =>
         {

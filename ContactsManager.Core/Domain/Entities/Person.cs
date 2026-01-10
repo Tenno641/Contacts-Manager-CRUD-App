@@ -5,7 +5,7 @@ namespace ContactsManager.Core.Domain.Entities;
 public class Person
 {
     [Key]
-    public Guid Id { get; set; }
+    public Guid Id { get; set; } = Guid.CreateVersion7();
     [MaxLength(40)]
     public string? Name { get; set; }
     [MaxLength(40)]

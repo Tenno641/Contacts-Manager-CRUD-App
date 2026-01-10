@@ -1,9 +1,9 @@
 ﻿using ContactsManager.Core.DTO.Countries.Request;
 using ContactsManager.Core.DTO.Countries.Response;
 using ContactsManager.Core.Services.Countries;
-using Entities.DataAccess;
+using ContactsManager.Infrastructure;
+using ContactsManager.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Repository;
 
 namespace ContactsManager.ServiceTests;
 

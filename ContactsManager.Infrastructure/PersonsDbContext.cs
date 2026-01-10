@@ -1,11 +1,13 @@
 ﻿using ContactsManager.Core.Domain.Entities;
+using ContactsManager.Core.Domain.IdentityEntities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 
-namespace Entities.DataAccess;
-public class PersonsDbContext : DbContext
+namespace ContactsManager.Infrastructure;
+public class PersonsDbContext : IdentityDbContext<User, Role, Guid>
 {
     public PersonsDbContext(DbContextOptions<PersonsDbContext> dbContextOptions) : base(dbContextOptions) { }
     public virtual DbSet<Country> Countries { get; set; }
@@ -27,6 +29,7 @@ public class PersonsDbContext : DbContext
         //{
         //    modelBuilder.Entity<Person>().HasData(person);
         //}
+
         modelBuilder.Entity<Person>()
             .HasOne(person => person.Country)
             .WithMany(country => country.Persons)
@@ -35,6 +38,22 @@ public class PersonsDbContext : DbContext
         modelBuilder.Entity<Country>()
             .HasIndex(country => country.Name)
             .IsUnique();
+
+        modelBuilder.Entity<Country>()
+            .Property(country => country.Id)
+            .ValueGeneratedNever();
+
+        modelBuilder.Entity<Person>()
+            .Property(person => person.Id)
+            .ValueGeneratedNever();
+
+        modelBuilder.Entity<User>()
+            .Property(user => user.Id)
+            .ValueGeneratedNever();
+
+        modelBuilder.Entity<Role>()
+            .Property(role => role.Id)
+            .ValueGeneratedNever();
     }
     public IEnumerable<Person> GetAllPersonsStoredProcedure()
     {

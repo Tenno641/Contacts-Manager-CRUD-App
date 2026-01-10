@@ -9,8 +9,9 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Rotativaio.AspNetCore;
+using Microsoft.AspNetCore.Authorization;
 
-namespace ContactsManager.Web.Web.Controllers;
+namespace ContactsManager.Web.Controllers;
 [Route("[Controller]")]
 //[TypeFilter(typeof(CookieAuthenticationFilter))]
 public class HomeController : Controller
@@ -183,6 +184,7 @@ public class HomeController : Controller
         return (await _countriesService.GetAllAsync()).Select(country => new SelectListItem() { Text = country.Name, Value = country.Id.ToString() });
     }
 
+    [AllowAnonymous]
     [Route("/Error")]
     public IActionResult Error()
     {

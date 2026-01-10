@@ -4,7 +4,7 @@ using ContactsManager.Core.DTO.Persons.Response;
 using ContactsManager.Core.ServiceContracts.Countries;
 using ContactsManager.Core.ServiceContracts.Persons;
 using ContactsManager.Core.Services.Persons;
-using ContactsManager.Web.Web.Controllers;
+using ContactsManager.Web.Controllers;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
