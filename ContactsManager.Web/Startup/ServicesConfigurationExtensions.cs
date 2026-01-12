@@ -8,6 +8,7 @@ using ContactsManager.Infrastructure;
 using ContactsManager.Infrastructure.Repositories;
 using ContactsManager.Web.Filters.ActionFilters;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -51,12 +52,16 @@ public static class ServicesConfigurationExtensions
             .AddRoleStore<RoleStore<Role, PersonsDbContext, Guid>>()
             .AddDefaultTokenProviders();
 
-        services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/SignIn");
+        services.ConfigureApplicationCookie(options =>
+        {
+            options.LoginPath = "/Account/SignIn";
+            options.Cookie.HttpOnly = true;
+        });
 
         services.AddHttpLogging(options =>
-        {
-            options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.None;
-        });
+            {
+                options.LoggingFields = HttpLoggingFields.None;
+            });
 
         if (!environment.IsEnvironment("IntegrationTesting"))
         {

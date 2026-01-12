@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace ContactsManager.Core.DTO.Users;
 
@@ -9,6 +10,7 @@ public class Register
     [Required]
     [EmailAddress]
     [DataType(DataType.EmailAddress)]
+    [Remote(action: "IsEmailAlreadyRegistered", controller: "Account", ErrorMessage = "Email Already Exists!")]
     public required string Email { get; set; }
     [Required]
     [RegularExpression("^01[0125][0-9]{8}$", ErrorMessage = "Please provide valid phone number")]
@@ -21,4 +23,5 @@ public class Register
     [DataType(DataType.Password)]
     [Compare(nameof(Password))]
     public required string ConfirmPassword { get; set; }
+    public UserType UserType { get; set; } = UserType.User;
 }
