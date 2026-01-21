@@ -82,7 +82,10 @@ public class AccountController : Controller
             return View(login);
         }
 
-        var result = await _signInManager.PasswordSignInAsync(login.Email, login.Password, false, false);
+        User? user = await _userManager.FindByEmailAsync(login.Email);
+        if (user is null) return Unauthorized();
+
+        var result = await _signInManager.CheckPasswordSignInAsync(user, login.Password, false);
 
         if (result is null || !result.Succeeded)
         {
