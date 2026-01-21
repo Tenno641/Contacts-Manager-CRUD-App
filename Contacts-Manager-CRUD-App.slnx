@@ -4,9 +4,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Folder Name="/problem/">
-    <Project Path="SolveProblem/SolveProblem.csproj" Id="74a8e73d-ffb9-47a6-ab1f-308c4dbb1da8" />
-  </Folder>
   <Folder Name="/src/">
     <Project Path="ContactsManager.Core/ContactsManager.Core.csproj" />
     <Project Path="ContactsManager.Infrastructure/ContactsManager.Infrastructure.csproj" />
