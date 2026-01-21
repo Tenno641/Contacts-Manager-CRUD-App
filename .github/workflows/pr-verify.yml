@@ -19,3 +19,6 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build 
+
+      - name: Test .Net Core App
+        run: dotnet test
