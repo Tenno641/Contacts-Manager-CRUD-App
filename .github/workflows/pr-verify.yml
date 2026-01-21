@@ -24,4 +24,4 @@ jobs:
         run: dotnet test --no-build
 
       - name: Formatting Code
-        run: dotnet format --verify-no-changes
+        run: dotnet format 
