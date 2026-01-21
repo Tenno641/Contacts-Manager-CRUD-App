@@ -2,7 +2,7 @@
 
 namespace ContactsManager.Core.Domain.IdentityEntities;
 
-public class Role: IdentityRole<Guid>
+public class Role : IdentityRole<Guid>
 {
     public Role()
     {

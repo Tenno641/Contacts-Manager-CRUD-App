@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Globalization;
 
 namespace ContactsManager.Core.Services.Persons;
+
 public class PersonsGetService : IPersonsGetService
 {
     private readonly IPersonsRepository _repository;
@@ -35,7 +36,7 @@ public class PersonsGetService : IPersonsGetService
         int age = 0;
         if (searchString is null) return await GetAllAsync();
         if (searchBy.Equals(nameof(PersonResponse.Age)) && !int.TryParse(searchString, out age))
-            return await GetAllAsync(); 
+            return await GetAllAsync();
 
         return searchBy switch
         {

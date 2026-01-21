@@ -3,6 +3,7 @@ using ContactsManager.Core.DTO.Persons.Request;
 using System.Linq.Expressions;
 
 namespace ContactsManager.Core.DTO.Persons.Response;
+
 public record struct PersonResponse
 (
     Guid Id,
@@ -29,7 +30,7 @@ public static class PersonResponseExtension
         CountryId = person.CountryId,
         Address = person.Address,
         ReceiveNewsLetter = person.ReceiveNewsLetter,
-        Age = CalculateAge(person.DateOfBirth), 
+        Age = CalculateAge(person.DateOfBirth),
         CountryName = person.Country != null ? person.Country.Name : null
     };
 

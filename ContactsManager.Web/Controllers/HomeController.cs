@@ -12,6 +12,7 @@ using Rotativaio.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 
 namespace ContactsManager.Web.Controllers;
+
 [Route("[Controller]")]
 //[TypeFilter(typeof(CookieAuthenticationFilter))]
 public class HomeController : Controller

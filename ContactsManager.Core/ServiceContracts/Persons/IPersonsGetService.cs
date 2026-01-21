@@ -2,6 +2,7 @@
 using ContactsManager.Core.DTO.Persons.Response;
 
 namespace ContactsManager.Core.ServiceContracts.Persons;
+
 public interface IPersonsGetService
 {
     Task<PersonResponse?> GetAsync(Guid? id);

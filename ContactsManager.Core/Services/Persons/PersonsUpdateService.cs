@@ -6,6 +6,7 @@ using ContactsManager.Core.Helpers;
 using ContactsManager.Core.ServiceContracts.Persons;
 
 namespace ContactsManager.Core.Services.Persons;
+
 public class PersonsUpdateService : IPersonsUpdateService
 {
     private readonly IPersonsRepository _repository;

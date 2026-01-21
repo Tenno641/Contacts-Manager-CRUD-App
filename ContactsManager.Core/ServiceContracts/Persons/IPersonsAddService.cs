@@ -1,6 +1,7 @@
 ﻿using ContactsManager.Core.DTO.Persons.Response;
 
 namespace ContactsManager.Core.ServiceContracts.Persons;
+
 public interface IPersonsAddService
 {
     Task<PersonResponse> AddPersonAsync(PersonRequest? personRequest);

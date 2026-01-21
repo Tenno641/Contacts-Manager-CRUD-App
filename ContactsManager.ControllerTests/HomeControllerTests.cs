@@ -17,10 +17,10 @@ public class HomeControllerTests
 {
     private readonly ITestOutputHelper _testOutput;
     private readonly Fixture _fixture;
-    private readonly Mock<IPersonsAddService> _personsAddServiceMock; 
-    private readonly Mock<IPersonsDeleteService> _personsDeleteServiceMock; 
-    private readonly Mock<IPersonsGetService> _personsGetServiceMock; 
-    private readonly Mock<IPersonsUpdateService> _personsUpdateServiceMock; 
+    private readonly Mock<IPersonsAddService> _personsAddServiceMock;
+    private readonly Mock<IPersonsDeleteService> _personsDeleteServiceMock;
+    private readonly Mock<IPersonsGetService> _personsGetServiceMock;
+    private readonly Mock<IPersonsUpdateService> _personsUpdateServiceMock;
     private readonly HomeController _homeController;
     private readonly Mock<ILogger<HomeController>> _loggerMock;
     public HomeControllerTests(ITestOutputHelper testOutput)
@@ -48,9 +48,9 @@ public class HomeControllerTests
             .Build<PersonResponse>()
             .CreateMany();
 
-       _personsGetServiceMock 
-            .Setup(service => service.FilterAsync(It.IsAny<string>(), It.IsAny<string>()))
-            .ReturnsAsync(persons);
+        _personsGetServiceMock
+             .Setup(service => service.FilterAsync(It.IsAny<string>(), It.IsAny<string>()))
+             .ReturnsAsync(persons);
 
         _personsGetServiceMock
             .Setup(service => service.OrderAsync(It.IsAny<IEnumerable<PersonResponse>>(), It.IsAny<string>(), It.IsAny<SortOrderOptions>()))

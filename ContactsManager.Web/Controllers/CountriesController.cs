@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContactsManager.Web.Controllers;
+
 [Route("[controller]")]
 public class CountriesController : Controller
 {
