@@ -22,3 +22,6 @@ jobs:
 
       - name: Test .Net Core App
         run: dotnet test --no-build
+
+      - name: Formatting Code
+        run: dotnet format 

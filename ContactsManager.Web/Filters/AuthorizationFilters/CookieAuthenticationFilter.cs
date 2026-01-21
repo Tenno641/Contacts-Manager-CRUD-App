@@ -11,7 +11,7 @@ public class CookieAuthenticationFilter : IAuthorizationFilter
 
         string? authCookie = GetAuthenticationCookie(context.HttpContext);
 
-        if (authCookie is null || !authCookie.Equals("Pass")) 
+        if (authCookie is null || !authCookie.Equals("Pass"))
             context.Result = new UnauthorizedResult();
     }
     private string? GetAuthenticationCookie(HttpContext context)

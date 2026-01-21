@@ -6,6 +6,7 @@ using ContactsManager.Core.ServiceContracts.Persons;
 using System.ComponentModel.DataAnnotations;
 
 namespace ContactsManager.Core.Services.Persons;
+
 public class PersonsAddService : IPersonsAddService
 {
     private readonly IPersonsRepository _repository;

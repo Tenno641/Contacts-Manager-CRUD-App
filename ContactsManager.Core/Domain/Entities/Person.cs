@@ -9,7 +9,7 @@ public class Person
     [MaxLength(40)]
     public string? Name { get; set; }
     [MaxLength(40)]
-    public string? Email { get; set;}
+    public string? Email { get; set; }
     public DateTime? DateOfBirth { get; set; }
     [MaxLength(40)]
     public string? Gender { get; set; }

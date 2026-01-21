@@ -1,6 +1,7 @@
 ﻿using ContactsManager.Core.Domain.Entities;
 
 namespace ContactsManager.Core.DTO.Countries.Response;
+
 public class CountryResponse
 {
     public Guid Id { get; init; }

@@ -3,6 +3,7 @@ using ContactsManager.Core.Domain.RepositoryContracts;
 using ContactsManager.Core.ServiceContracts.Persons;
 
 namespace ContactsManager.Core.Services.Persons;
+
 public class PersonsDeleteService : IPersonsDeleteService
 {
     private readonly IPersonsRepository _repository;

@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 namespace ContactsManager.Infrastructure;
+
 public class PersonsDbContext : IdentityDbContext<User, Role, Guid>
 {
     public PersonsDbContext(DbContextOptions<PersonsDbContext> dbContextOptions) : base(dbContextOptions) { }

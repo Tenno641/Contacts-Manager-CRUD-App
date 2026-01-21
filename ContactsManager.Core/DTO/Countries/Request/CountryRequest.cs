@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace ContactsManager.Core.DTO.Countries.Request;
+
 public class CountryRequest
 {
     [Required]
