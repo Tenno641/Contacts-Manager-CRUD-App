@@ -21,4 +21,4 @@ jobs:
         run: dotnet build 
 
       - name: Test .Net Core App
-        run: dotnet test
+        run: dotnet test --no-build
