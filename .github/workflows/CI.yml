@@ -38,18 +38,14 @@ jobs:
     uses: ./.github/workflows/steps-deploy.yml
     with:
       env: dev
-      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       app_service_name: ${{ env.app_service_name }}
-        
+    secrets: inherit
+  
   deploy_prod:
     name: Deploy Prod
     needs: deploy_dev
     uses: ./.github/workflows/steps-deploy.yml
     with:
       env: prod 
-      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       app_service_name: ${{ env.app_service_name }} 
+    secrets: inherit
