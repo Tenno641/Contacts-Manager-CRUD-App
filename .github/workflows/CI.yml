@@ -24,4 +24,4 @@ jobs:
         run: dotnet format 
         
       - name: Dotnet Publish
-        run: dotnet publish ContactsManger.Web/ContactManager.Web.csproj --configuration release --no-restore --output artifacts
+        run: dotnet publish ContactsManager.Web/ContactsManager.Web.csproj --configuration release --no-restore --output artifacts
