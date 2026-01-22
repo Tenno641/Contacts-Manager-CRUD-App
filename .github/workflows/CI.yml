@@ -25,3 +25,10 @@ jobs:
         
       - name: Dotnet Publish
         run: dotnet publish ContactsManager.Web/ContactsManager.Web.csproj --configuration release --no-restore --output artifacts
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v6.0.0
+        with:
+          name: ContactsManager Artifact
+          path: artifacts
+      
