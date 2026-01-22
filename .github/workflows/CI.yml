@@ -41,7 +41,7 @@ jobs:
     uses: ./.github/workflows/steps-deploy.yml
     with:
       env: dev
-      app_service_name: ${{ env.app_service_name }}
+      app_service_name: ${{ vars.app_service_name }}
     secrets: inherit
   
   deploy_prod:
@@ -50,5 +50,5 @@ jobs:
     uses: ./.github/workflows/steps-deploy.yml
     with:
       env: prod 
-      app_service_name: ${{ env.app_service_name }} 
+      app_service_name: ${{ vars.app_service_name }} 
     secrets: inherit
