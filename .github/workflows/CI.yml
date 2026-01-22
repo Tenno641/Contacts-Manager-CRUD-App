@@ -1,0 +1,27 @@
+﻿name: PR Verify
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: PR Verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0
+
+      - name: Test .Net Core App
+        run: dotnet test --no-build
+
+      - name: Formatting Code
+        run: dotnet format 
+        
+      - name: Dotnet Publish
+        run: dotnet publish ContactsManger.Web/ContactManager.Web.csproj --configuration release --no-restore --output artifacts
