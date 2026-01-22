@@ -10,7 +10,7 @@ on:
         required: true
         
     secrets:
-      AZURE_CLINET_ID:
+      AZURE_CLIENT_ID:
         required: true
       AZURE_TENANT_ID:
         required: true
@@ -30,7 +30,7 @@ jobs:
           path: artifacts
       
       - name: Azure Login
-        run: echo "Client ${{ secrets.AZURE_CLIENT_ID }} Tenant ${{ secrets.AZURE_TENANT_ID }} Subsription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        run: echo "Client ${{ secrets.AZURE_CLIENT_ID }} Tenant ${{ secrets.AZURE_TENANT_ID }} Subsription ${{ secrets.AZURE_SUBSCRIPTION_ID }}"
       
       - name: Deploy to Azure App Service
-        run: echo "app service name ${{ inputs.app_service_name }}
+        run: echo "app service name ${{ inputs.app_service_name }}"
