@@ -1,4 +1,6 @@
-﻿using ContactsManager.Core.ServiceContracts.Countries;
+﻿using ContactsManager.Core.Domain.Entities;
+using ContactsManager.Core.DTO.Countries.Request;
+using ContactsManager.Core.ServiceContracts.Countries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContactsManager.Web.Controllers;
@@ -36,5 +38,20 @@ public class CountriesController : Controller
         int affectedRows = await _countriesService.ImportFromExcelFile(file);
         ViewBag.Message = $"{affectedRows} countries added!";
         return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddCountry(CountryRequest request)
+    {
+        if (!ModelState.IsValid)
+        {
+            IEnumerable<string> errors = ModelState.Values.SelectMany(value => value.Errors.Select(error => error.ErrorMessage)).ToList();
+            string errorMessage = string.Join("\n", errors);
+            ViewBag.ErrorMessage = errorMessage;
+            return View(viewName: "ImportExcelFile");
+        }
+        await _countriesService.AddCountryAsync(request);
+        ViewBag.Message = $"Country {request.Name} added!";
+        return View(viewName: "ImportExcelFile");
     }
 }

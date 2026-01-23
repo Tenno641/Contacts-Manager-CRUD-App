@@ -148,7 +148,7 @@ public class HomeController : Controller
         {
             return RedirectToAction(actionName: "Index");
         }
-        return View(person);
+        return View(person.Value);
     }
 
     [Route("[action]")]
